@@ -28,18 +28,20 @@ packages/syntexa/
 
 ## New project setup
 
-To scaffold a new Syntexa project structure (folders and minimal files):
+**One command:** after `composer require syntexa/core`, the Composer plugin runs `syntexa init` automatically if the project has no `server.php` yet.
 
 ```bash
 mkdir my-app && cd my-app
 composer init -n
 composer require syntexa/core
-vendor/bin/syntexa init
+# Plugin runs init automatically; then:
 cp .env.example .env
-# Edit .env, then: php server.php
+php server.php
 ```
 
-The `syntexa init` command creates: `bin/`, `public/`, `src/modules/`, `src/infrastructure/`, `var/cache`, `var/log`, `var/docs`, `.env.example`, `server.php`, `bin/syntexa`, `.gitignore`. Use `--force` to overwrite existing files, `--dir=/path` to target another directory.
+You may be prompted to allow the plugin: `composer config allow-plugins.syntexa/core true`.
+
+To scaffold manually (or overwrite): `vendor/bin/syntexa init` (use `--force` to overwrite, `--dir=/path` for another directory). The command creates: `bin/`, `public/`, `src/modules/`, `src/infrastructure/`, `var/`, `.env.example`, `server.php`, `bin/syntexa`, `.gitignore`.
 
 ## Quick links (shared docs)
 
