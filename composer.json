@@ -1,0 +1,15 @@
+{
+    "name": "syntexa/docs",
+    "description": "Syntexa Framework documentation (shared docs, architecture, guides, package map)",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Syntexa",
+            "email": "support@syntexa.local"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
+    }
+}
