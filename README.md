@@ -48,6 +48,7 @@ To scaffold manually (or overwrite): `vendor/bin/syntexa init` (use `--force` to
 | Topic | Location |
 |-------|----------|
 | **AI quick reference** | [AI_REFERENCE.md](AI_REFERENCE.md) |
+| **Adding new pages/routes** | Start with [core/docs/ADDING_ROUTES.md](../core/docs/ADDING_ROUTES.md) (how to create a module). For **HTML pages** use [AI_REFERENCE.md](AI_REFERENCE.md) or [guides/CONVENTIONS.md](guides/CONVENTIONS.md) (Response DTO, Twig, templates) — do not render HTML manually in the Handler. |
 | **Architecture** | [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md) |
 | **Overlay architecture** | [architecture/OVERLAY_ARCHITECTURE.md](architecture/OVERLAY_ARCHITECTURE.md) |
 | **Conventions** | [guides/CONVENTIONS.md](guides/CONVENTIONS.md) |
@@ -74,10 +75,11 @@ Use this table to see what the framework offers and which packages to add to you
 ## For AI assistants
 
 1. **Start with** the app’s `AI_ENTRY.md` (e.g. in project root); it points here.
-2. **Shared docs** — read [AI_REFERENCE.md](AI_REFERENCE.md), then [architecture/](architecture/) and [guides/](guides/) as needed.
-3. **Per-package** — for attributes use [core/docs/attributes/](../core/docs/attributes/); for ORM use [orm/docs/](../orm/docs/); for dev-tools/window-manager use their READMEs.
-4. **Package map** — use the table above to see which packages exist and what to install for a given feature.
-5. **Working directory** — use the application’s `var/docs/` for temporary or intermediate files.
+2. **Adding new pages/routes** — first read [core/docs/ADDING_ROUTES.md](../core/docs/ADDING_ROUTES.md) (how to create a module). For **HTML pages** (not JSON API) use [AI_REFERENCE.md](AI_REFERENCE.md) or [guides/CONVENTIONS.md](guides/CONVENTIONS.md) (Response DTO + Twig, templates); do not implement HTML rendering manually in the Handler.
+3. **Shared docs** — read [AI_REFERENCE.md](AI_REFERENCE.md), then [architecture/](architecture/) and [guides/](guides/) as needed.
+4. **Per-package** — for attributes use [core/docs/attributes/](../core/docs/attributes/); for ORM use [orm/docs/](../orm/docs/); for dev-tools/window-manager use their READMEs.
+5. **Package map** — use the table above to see which packages exist and what to install for a given feature.
+6. **Working directory** — use the application’s `var/docs/` for temporary or intermediate files (plans, notes, drafts). Content is not committed (`.gitignore`). Examples: refactor plan → `var/docs/refactor-plan.md`; exploration notes → `var/docs/exploration-notes.md`; draft doc → `var/docs/draft-xyz.md`. Use `var/docs` for any intermediate output so that `docs/` and the project root stay clean.
 
 ## Contributing
 

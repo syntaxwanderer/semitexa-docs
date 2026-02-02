@@ -82,6 +82,8 @@ module-name/
 
 **Key:** Modules are split by concern, not by feature!
 
+When adding new routes via a module (see **core/docs/ADDING_ROUTES.md**), for **HTML pages** use Response DTO + Twig; do not put inline HTML in the Handler.
+
 ## 🔑 Key Concepts
 
 ### 1. Request/Response/Handler Pattern
