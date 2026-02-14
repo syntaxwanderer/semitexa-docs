@@ -1,6 +1,7 @@
 {
     "name": "semitexa/docs",
     "description": "Semitexa Framework documentation (shared docs, architecture, guides, package map)",
+    "version": "v1.0.8",
     "type": "library",
     "license": "MIT",
     "authors": [
