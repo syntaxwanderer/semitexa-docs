@@ -3,6 +3,8 @@
 > 🤖 **AI Agent Note:** For a hallucination-free development experience,
 > follow the [AI-Optimized Guide](./AI_REFERENCE.md).
 
+**Guides:** [Get Started](docs/hm/GET_STARTED.md) (install & run) · [A minimal working page](docs/hm/MINIMAL_PAGE.md) (Payload as the shield). For AI-oriented versions see [docs/ai/](docs/ai/).
+
 ---
 
 ### Introduction

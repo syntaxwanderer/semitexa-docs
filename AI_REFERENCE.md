@@ -54,3 +54,5 @@ This document states **why** Semitexa exists and **what problems** it tries to s
 - **AI-oriented** means the codebase is built so that agents can reason about it reliably; follow the documented patterns and prefer explicit, typed, contract-based design.
 
 Technical details — request lifecycle, modules, registry, commands, sessions, attributes — are documented in the project and in the `semitexa-core` (and other) package docs. Those docs use a simple structure (Purpose, When to use, Rules/Steps, Where it lives) and often include a short **Why** or **Rationale** for key decisions. This file is the **philosophy**: the pain and the intent behind Semitexa, in a form you can use to align your suggestions and generated code with the project’s goals.
+
+**Guides for agents:** [Get Started](./docs/ai/GET_STARTED.md) (install & run) · [A minimal working page](./docs/ai/MINIMAL_PAGE.md) (Payload as the shield, validation example). Human-oriented versions: [docs/hm/](./docs/hm/).
