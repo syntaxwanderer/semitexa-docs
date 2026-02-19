@@ -93,7 +93,8 @@ bin/semitexa server:stop
 
 ### What’s next?
 
-- **Add pages and routes** — see `vendor/semitexa/core/docs/ADDING_ROUTES.md`.  
+- **Your first page (Twig)** — add a minimal HTML page with a Twig template: [A minimal working page](MINIMAL_PAGE.md). That guide shows one route, one Payload, one Handler, and **rendering with Twig** (no JSON). Same Payload‑first flow; the handler sets the layout handle and context, and the framework renders the template.
+- **Add more routes** — see `vendor/semitexa/core/docs/ADDING_ROUTES.md`.  
 - **Understand the stack** — read [About Semitexa](../../README.md) and the rest of the docs in this package.
 
 The main aim of this guide is to get you from zero to a running app with as little friction as possible. For more detail and machine-friendly steps, use the [AI-oriented Get Started](../ai/GET_STARTED.md) or the core package documentation.

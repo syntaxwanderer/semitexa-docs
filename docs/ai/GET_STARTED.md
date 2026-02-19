@@ -98,6 +98,7 @@ bin/semitexa server:stop
 | Goal | Document or command |
 |------|----------------------|
 | Why Semitexa (vision, goals) | [README.md](../../README.md) · [AI_REFERENCE.md](../../AI_REFERENCE.md) |
+| **First page with Twig** (minimal route + Payload + Handler + template) | [A minimal working page (AI)](MINIMAL_PAGE.md) · [for humans](../hm/MINIMAL_PAGE.md) |
 | Add new pages / routes | `vendor/semitexa/core/docs/ADDING_ROUTES.md` (or package path `pakages/semitexa-core/docs/ADDING_ROUTES.md`) |
 | Run / Docker / ports / logs | `vendor/semitexa/core/docs/RUNNING.md` |
 | Service contracts, DI, bindings | `vendor/semitexa/core/docs/SERVICE_CONTRACTS.md` · `bin/semitexa contracts:list --json` |
@@ -113,4 +114,4 @@ bin/semitexa server:stop
 4. **Env** → `cp .env.example .env`.  
 5. **Run** → `bin/semitexa server:start` (Docker). App on port 9502 by default.
 
-For anything beyond installation and run (routes, modules, contracts), use the **Mapping** table above and the referenced docs.
+For a **first page with Twig** (one route, Payload, Handler, template), use [MINIMAL_PAGE.md](MINIMAL_PAGE.md). For anything else (routes, modules, contracts), use the **Mapping** table above and the referenced docs.
