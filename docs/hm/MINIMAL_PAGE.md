@@ -145,16 +145,16 @@ Example — **`src/modules/Website/Application/View/templates/minimal.html.twig`
 
 ### Step 5: Create the Handler
 
-The Handler receives the **Payload** (already validated) and the resource object. It does not need to check or parse the request again — it trusts the Payload. Put it in **`Application/Event/PayloadHandler/`**. You can type-hint both parameters as your Payload and Resource classes (e.g. `MinimalPagePayload`, `MinimalPageResource`); the framework only passes those instances, so no casts are needed. For Layout (Twig) responses the framework passes the Resource instance, which implements **LayoutRenderableInterface**. Set the render handle and context on it, then return it; the framework will render the template.
+The Handler receives the **Payload** (already validated) and the resource object. It does not need to check or parse the request again — it trusts the Payload. Put it in **`Application/Handler/PayloadHandler/`**. You can type-hint both parameters as your Payload and Resource classes (e.g. `MinimalPagePayload`, `MinimalPageResource`); the framework only passes those instances, so no casts are needed. For Layout (Twig) responses the framework passes the Resource instance, which implements **LayoutRenderableInterface**. Set the render handle and context on it, then return it; the framework will render the template.
 
-Example — **`src/modules/Website/Application/Event/PayloadHandler/MinimalPageHandler.php`**:
+Example — **`src/modules/Website/Application/Handler/PayloadHandler/MinimalPageHandler.php`**:
 
 ```php
 <?php
 
 declare(strict_types=1);
 
-namespace Semitexa\Modules\Website\Application\Event\PayloadHandler;
+namespace Semitexa\Modules\Website\Application\Handler\PayloadHandler;
 
 use Semitexa\Core\Attributes\AsPayloadHandler;
 use Semitexa\Core\Contract\HandlerInterface;

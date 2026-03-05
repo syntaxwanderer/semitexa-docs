@@ -153,16 +153,16 @@ Example — `src/modules/Website/Application/View/templates/minimal.html.twig`:
 
 ### 6. Create the Handler
 
-Put the handler in **`Application/Event/PayloadHandler/`** with namespace `Semitexa\Modules\{ModuleName}\Application\Event\PayloadHandler\`. It receives the **Payload** (already validated) and the resource object; it must return a `ResourceInterface`. You can type-hint both parameters as your concrete Payload and Resource classes (e.g. `MinimalPagePayload`, `MinimalPageResource`) — the framework only ever passes those instances, so no casts are needed. It does not need to re-validate input — it trusts the Payload. For Layout responses the framework passes the Resource instance, which implements **LayoutRenderableInterface** (GenericResponse). Set the render handle and context on it and return it; the framework will render the Twig template.
+Put the handler in **`Application/Handler/PayloadHandler/`** with namespace `Semitexa\Modules\{ModuleName}\Application\Handler\PayloadHandler\`. It receives the **Payload** (already validated) and the resource object; it must return a `ResourceInterface`. You can type-hint both parameters as your concrete Payload and Resource classes (e.g. `MinimalPagePayload`, `MinimalPageResource`) — the framework only ever passes those instances, so no casts are needed. It does not need to re-validate input — it trusts the Payload. For Layout responses the framework passes the Resource instance, which implements **LayoutRenderableInterface** (GenericResponse). Set the render handle and context on it and return it; the framework will render the Twig template.
 
-Example — `src/modules/Website/Application/Event/PayloadHandler/MinimalPageHandler.php`:
+Example — `src/modules/Website/Application/Handler/PayloadHandler/MinimalPageHandler.php`:
 
 ```php
 <?php
 
 declare(strict_types=1);
 
-namespace Semitexa\Modules\Website\Application\Event\PayloadHandler;
+namespace Semitexa\Modules\Website\Application\Handler\PayloadHandler;
 
 use Semitexa\Core\Attributes\AsPayloadHandler;
 use Semitexa\Core\Contract\HandlerInterface;
@@ -234,7 +234,7 @@ Restart the application (e.g. `bin/semitexa server:stop` then `bin/semitexa serv
 2. **Payload (shield):** `Application/Payload/Request/{Name}Payload.php` — `#[AsPayload(path, methods, responseWith)]`, implements `PayloadInterface` and `ValidatablePayload`. Use protected properties + getters/setters for hydration; `validate()` returns `PayloadValidationResult`. Use traits e.g. `LengthValidationTrait`, `NotBlankValidationTrait` (see `vendor/semitexa/core/docs/PAYLOAD_VALIDATION.md`).
 3. **Resource:** `Application/Resource/{Name}Resource.php` — `#[AsResource(handle: 'minimal', format: ResponseFormat::Layout)]`, extends `GenericResponse`. Handle name must match template file `{handle}.html.twig`.
 4. **Template:** `Application/View/templates/minimal.html.twig` — extend base layout (e.g. `@project-layouts-Website/base.html.twig`), use `response.*` for context set by the handler.
-5. **Handler:** `Application/Event/PayloadHandler/{Name}Handler.php` — `#[AsPayloadHandler(payload, resource)]`, implements `HandlerInterface`; call `setRenderHandle('minimal')` and `setRenderContext([...])` on the response, then return the response. Framework renders Twig.
+5. **Handler:** `Application/Handler/PayloadHandler/{Name}Handler.php` — `#[AsPayloadHandler(payload, resource)]`, implements `HandlerInterface`; call `setRenderHandle('minimal')` and `setRenderContext([...])` on the response, then return the response. Framework renders Twig.
 6. **Sync:** `bin/semitexa registry:sync:payloads` (or `registry:sync`).
 7. **Reload** the app and hit the route.
 
