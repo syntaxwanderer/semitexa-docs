@@ -47,3 +47,21 @@ final class BackfillConversationTenantId implements DataPatchInterface
 
 — `vendor/semitexa/os/src/Application/Update/BackfillConversationTenantId.php`
 
+## `#[AsUpdateAdvisory]`
+
+`Semitexa\Update\Attribute\AsUpdateAdvisory`
+
+Applies to: class
+
+| parameter | type | required |
+|---|---|---|
+| `name` | `string` | yes |
+| `module` | `string` | yes |
+
+```php
+#[AsUpdateAdvisory(name: 'override-drift', module: 'semitexa/prompt')]
+final class PromptOverrideDriftAdvisory implements UpdateAdvisoryInterface
+```
+
+— `vendor/semitexa/prompt/src/Application/Update/PromptOverrideDriftAdvisory.php`
+
